@@ -45,3 +45,52 @@ nav {
         }
     }
 }
+
+
+/* "BASICS" STYLES */
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .line {
+        width: 100%;
+        padding: 1px 0px;
+    }
+    .square,
+    .circle {
+        pointer-events: none;
+        position: relative;
+        width: 56px;
+        height: 56px;
+        margin: 4px;
+        border-radius: 4px;
+        background-color: #44D6E9;
+    }
+    img {
+        height: 700px;
+    }
+}
+
+
+/* "GRID" STYLES */
+
+#grid-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 580px;
+    .square {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100px;
+        background-color: #44D6E9;
+        border-radius: 4px;
+        margin: 8px;
+    }
+    .selected {
+        background-color: #080E2C;
+        color: #FFFFFF;
+    }
+}
