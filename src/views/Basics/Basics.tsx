@@ -1,12 +1,7 @@
-import React from 'react'
-
-import './styles.scss'
-import Hourglass from '../../assets/hourglass.jpg'
-
-// Class to Function: https://262.ecma-international.org/6.0/#sec-makeclassconstructor
-
+import React from "react";
+import anime from "animejs";
 interface State {
-	counter: number
+	counter: number;
 }
 
 export class Basics extends React.Component<any, State> {
@@ -16,28 +11,53 @@ export class Basics extends React.Component<any, State> {
 		this.updateCounter = this.updateCounter.bind(this);
 	}
 
-	updateCounter () {
-		this.setState({ counter: this.state.counter + 1 })
+	updateCounter() {
+		const ARR = Array.from(new Array(10000000));
+		const COUNT = ARR.reduce((acc) => acc + 1, 0);
+		console.log(COUNT);
+		this.setState({ counter: this.state.counter + 1 });
 	}
 
-	render () {
+	componentDidMount() {
+		anime({
+			targets: ".linear-easing-demo .el",
+			translateX: 350,
+			direction: "alternate",
+			loop: true,
+			easing: "linear",
+		});
+	}
+
+	render() {
 		return (
 			<div id="wrapper">
 				<h1>Awesome and performant counter</h1>
 				<CountDisplay currentCount={this.state.counter} />
 				<button onClick={this.updateCounter}>Up one!</button>
-				<img src={Hourglass} alt="a HEAVY hourglass" />
+				<div className="animation-wrapper">
+					<div className="stagger-visualizer">
+						<div className="cursor color-red"></div>
+						<div className="dots-wrapper"></div>
+					</div>
+				</div>
+				<div className="demo-content linear-easing-demo">
+					<div className="line">
+						<div className="square el"></div>
+					</div>
+				</div>
 			</div>
-		)
+		);
 	}
 }
 
 class CountDisplay extends React.Component<any, State> {
-	render () {
+	render() {
 		return (
 			<div>
-				<p>Count: <span>{this.props.currentCount}</span></p>
+				<p>
+					Count: <span>{this.props.currentCount}</span>
+				</p>
 			</div>
-		)
+		);
 	}
 }
