@@ -16,6 +16,9 @@ export const Home = () => (
 			<h1>Runtime Performance 🚅</h1>
 		</section>
 		<section className="slide">
+			<h1>The "Call Stack" 📥</h1>
+		</section>
+		<section className="slide">
 			<h1>Don't solve problems you're not facing 🔴</h1>
 		</section>
 		<section className="slide">
