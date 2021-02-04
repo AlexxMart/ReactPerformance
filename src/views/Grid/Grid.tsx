@@ -12,7 +12,7 @@ const Tile: React.FC<any> = ({ onClick, index, active, children }) => {
 		onClick(index);
 	}
 
-	// console.log(`Square ${index} rendered`)
+	console.log(`Square #${index} rendered`)
 	return (
 		<div
 			className={active ? "square selected" : "square"}

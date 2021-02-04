@@ -12,7 +12,7 @@ export class Basics extends React.Component<any, State> {
 	}
 
 	updateCounter() {
-		const ARR = Array.from(new Array(10000000));
+		const ARR = Array.from(new Array(30000000)); // 👀 
 		const COUNT = ARR.reduce((acc) => acc + 1, 0);
 		console.log(COUNT);
 		this.setState({ counter: this.state.counter + 1 });
@@ -20,8 +20,8 @@ export class Basics extends React.Component<any, State> {
 
 	componentDidMount() {
 		anime({
-			targets: ".linear-easing-demo .el",
-			translateX: 350,
+			targets: ".el",
+			translateX: 400,
 			direction: "alternate",
 			loop: true,
 			easing: "linear",
